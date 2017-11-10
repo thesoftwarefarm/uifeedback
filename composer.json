@@ -1,0 +1,55 @@
+{
+    "name": "tsfcorp/uifeedback",
+    "type": "library",
+    "description": "Display messages",
+    "keywords": [
+        "laravel",
+        "messages",
+        "php"
+    ],
+    "homepage": "https://github.com/tsfcop/lister",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Emi Polak",
+            "email": "emi.tsf@gmail.com"
+        },
+        {
+            "name": "Marian Perca",
+            "email": "marian.perca@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "illuminate/support": "^5.4",
+        "illuminate/session": "^5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "^5.7|6.2",
+        "orchestra/testbench": "~3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TsfCorp\\UiFeedback\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TsfCorp\\UiFeedback\\Test\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TsfCorp\\UiFeedback\\UiFeedbackServiceProvider"
+            ],
+            "aliases": {
+                "UiFeedback": "TsfCorp\\UiFeedback\\Facades\\UiFeedback"
+            }
+        }
+    }
+}
