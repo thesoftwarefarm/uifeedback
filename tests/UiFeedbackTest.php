@@ -2,6 +2,7 @@
 
 namespace TsfCorp\Lister\Test;
 
+use Exception;
 use Illuminate\Contracts\Session\Session;
 use Orchestra\Testbench\TestCase;
 use TsfCorp\UiFeedback\MessageFormat;
@@ -92,5 +93,26 @@ class UiFeedbackTest extends TestCase
         ]);
 
         $app['view']->addNamespace('uifeedback', __DIR__ . '/../views');
+    }
+
+    public function testConvenience()
+    {
+        $ui = new UiFeedback($this->app->make(Session::class));
+
+        $ui->success("hello");
+
+        $messages = $ui->fetchMessages();
+        $this->assertCount(1, $messages);
+        $this->assertEquals('success', $messages[0]['type']);
+    }
+
+    /**
+     * @expectedException Exception
+     */
+    public function testConvenienceNotSet()
+    {
+        $ui = new UiFeedback($this->app->make(Session::class));
+
+        $ui->notfoundformat("hello");
     }
 }

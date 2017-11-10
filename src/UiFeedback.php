@@ -3,6 +3,7 @@
 namespace TsfCorp\UiFeedback;
 
 use Illuminate\Contracts\Session\Session;
+use ReflectionClass;
 
 class UiFeedback
 {
@@ -127,5 +128,20 @@ class UiFeedback
         }
 
         return $ui_messages;
+    }
+
+    public function __call($name, $arguments)
+    {
+        $available_formats = (new ReflectionClass(MessageFormat::class))->getConstants();
+        $format = strtolower($name);
+
+        // check if name is supported
+        if (!in_array($format, $available_formats))
+            throw new \Exception("Invalid message format for UiFeedback.");
+
+        if (!count($arguments))
+            return;
+
+        $this->set($format, $arguments[0], $arguments[1] ?? true);
     }
 }
