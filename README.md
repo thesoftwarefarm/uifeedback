@@ -31,7 +31,7 @@ UiFeedback::set(MessageFormat::SUCCESS, 'message');
 `set` method has 3 parameters:
 * message format: a string represeinting the class that will be added to the HTML container
 * message: a string represeinting the class that will be added to the HTML container
-* close button: wheather to display or not the close button for the alert
+* close button (optional, default: true): whether to display or not the close button for the alert
 
 Message format has the following options, but you can specify there whatever class you'd like and customise the CSS in your app.
  
