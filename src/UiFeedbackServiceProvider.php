@@ -25,11 +25,11 @@ class UiFeedbackServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__ . '/../views' => resource_path('views/vendor/uifeedback'),
-        ], 'config');
+        ], 'views');
 
         $this->publishes([
             __DIR__ . '/config/uifeedback.php' => config_path('uifeedback.php')
-        ], 'views');
+        ], 'config');
     }
 
     /**
