@@ -46,6 +46,14 @@ INFO | info
 LIGHT | light
 DARK | dark
 
+### Convenience methods
+
+You can set a message using the following pattern for supported message formats:
+```php
+UiFeedback::success('success message');
+UiFeedback::danger('error message');
+```
+
 ### Display messages
 
 In order to display the messages, you can add the following line in your views:
