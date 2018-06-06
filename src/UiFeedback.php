@@ -38,10 +38,14 @@ class UiFeedback
         if (empty($type) || empty($message))
             return '';
 
-        $this->set($type, $message, $close_button);
-
-        // return the HTML formatted message
-        return $this->get();
+        return view('uifeedback::messages', ['ui_messages' => [
+            [
+                'type' => $type,
+                'close_button' => $close_button,
+                'messages' => [$message],
+            ],
+        ],
+        ])->render();
     }
 
     /**
