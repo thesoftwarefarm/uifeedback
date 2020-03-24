@@ -106,11 +106,9 @@ class UiFeedbackTest extends TestCase
         $this->assertEquals('success', $messages[0]['type']);
     }
 
-    /**
-     * @expectedException Exception
-     */
     public function testConvenienceNotSet()
     {
+        $this->expectException(Exception::class);
         $ui = new UiFeedback($this->app->make(Session::class));
 
         $ui->notfoundformat("hello");
