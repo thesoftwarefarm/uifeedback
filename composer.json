@@ -20,14 +20,13 @@
         }
     ],
     "require": {
-        "php": ">=7.1",
+        "php": ">=7.1|8.*",
         "illuminate/support": "^5.4|^6.0|^7.0|^8.0",
         "illuminate/session": "^5.4|^6.0|^7.0|^8.0"
     },
     "require-dev": {
-        "fzaninotto/faker": "^1.7",
-        "phpunit/phpunit" : "^5.7|6.2|^8.0",
-        "orchestra/testbench": "~4.0"
+        "phpunit/phpunit" : "^5.7|6.2|^8.0|9.*",
+        "orchestra/testbench": "6.*"
     },
     "autoload": {
         "psr-4": {

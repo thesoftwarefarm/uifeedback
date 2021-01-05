@@ -7,7 +7,7 @@ use ReflectionClass;
 
 class UiFeedback
 {
-    private $key = "";
+    private $key;
 
     /**
      * @var Session
@@ -55,7 +55,7 @@ class UiFeedback
      * @param string|array $message
      * @param bool $close_button
      */
-    public function set($type = MessageFormat::INFO, $message, $close_button = true)
+    public function set($type = MessageFormat::INFO, $message = null, $close_button = true)
     {
         if (empty($type) || empty($message))
             return;
