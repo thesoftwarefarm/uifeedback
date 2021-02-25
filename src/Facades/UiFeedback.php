@@ -6,14 +6,14 @@ namespace TsfCorp\UiFeedback\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static void primary(string $message = "", bool $show_close_button = false)
- * @method static void secondary(string $message = "", bool $show_close_button = false)
- * @method static void success(string $message = "", bool $show_close_button = false)
- * @method static void danger(string $message = "", bool $show_close_button = false)
- * @method static void warning(string $message = "", bool $show_close_button = false)
- * @method static void info(string $message = "", bool $show_close_button = false)
- * @method static void light(string $message = "", bool $show_close_button = false)
- * @method static void dark(string $message = "", bool $show_close_button = false)
+ * @method static void primary(string|array $message = "", bool $show_close_button = false)
+ * @method static void secondary(string|array $message = "", bool $show_close_button = false)
+ * @method static void success(string|array $message = "", bool $show_close_button = false)
+ * @method static void danger(string|array $message = "", bool $show_close_button = false)
+ * @method static void warning(string|array $message = "", bool $show_close_button = false)
+ * @method static void info(string|array $message = "", bool $show_close_button = false)
+ * @method static void light(string|array $message = "", bool $show_close_button = false)
+ * @method static void dark(string|array $message = "", bool $show_close_button = false)
  *
  * @see \TsfCorp\UiFeedback\UiFeedback
  */
